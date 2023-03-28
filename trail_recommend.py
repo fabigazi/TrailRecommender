@@ -6,45 +6,57 @@ customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
 
+def states():
+    return ["None", "MA", "NH", "MI", "VT", "CT", "RI"]
+
+
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
 
+        example_image = tkinter.PhotoImage(file="images/smile_face.png")
+
         # configure window
-        self.title("CustomTkinter complex_example.py")
+        self.title("Trail Recommender")
         self.geometry(f"{1100}x{580}")
 
-        # create tabview
-        self.tabview = customtkinter.CTkTabview(self, width=250)
-        self.tabview.grid(row=0, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew")
-        self.tabview.add("CTkTabview")
-        self.tabview.add("Tab 2")
-        self.tabview.add("Tab 3")
-        self.tabview.tab("CTkTabview").grid_columnconfigure(0, weight=1)  # configure grid of individual tabs
-        self.tabview.tab("Tab 2").grid_columnconfigure(0, weight=1)
+        # when defining the row and col of the over arching grid
 
-        self.optionmenu_1 = customtkinter.CTkOptionMenu(self.tabview.tab("CTkTabview"), dynamic_resizing=False,
-                                                        values=["Value 1", "Value 2", "Value Long Long Long"])
-        self.optionmenu_1.grid(row=0, column=0, padx=20, pady=(20, 10))
-        self.combobox_1 = customtkinter.CTkComboBox(self.tabview.tab("CTkTabview"),
+        # create tabview
+        self.tab_view_filters = customtkinter.CTkTabview(self, width=250)
+        self.tab_view_filters.grid(row=0, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew")
+        self.tab_view_filters.add("Trail Preferences")
+        self.tab_view_filters.add("Tab 2")
+        self.tab_view_filters.add("Tab 3")
+        self.tab_view_filters.tab("Trail Preferences").grid_columnconfigure(3, weight=1)  # configure grid of individual tabs
+        self.tab_view_filters.tab("Tab 2").grid_columnconfigure(0, weight=1)
+
+        # self.tabview.tab("tabX") assigns the obect to the given tabX tab
+        self.states_menu = customtkinter.CTkOptionMenu(self.tab_view_filters.tab("Trail Preferences"), dynamic_resizing=True,
+                                                       values=states())
+
+        self.states_menu.grid(row=0, column=0, padx=20, pady=(10, 10))
+        self.combobox_1 = customtkinter.CTkComboBox(self.tab_view_filters.tab("Trail Preferences"),
                                                     values=["Value 1", "Value 2", "Value Long....."])
-        self.combobox_1.grid(row=1, column=0, padx=20, pady=(10, 10))
-        self.string_input_button = customtkinter.CTkButton(self.tabview.tab("CTkTabview"), text="Open CTkInputDialog",
-                                                           command=self.open_input_dialog_event)
-        self.string_input_button.grid(row=2, column=0, padx=20, pady=(10, 10))
-        self.label_tab_2 = customtkinter.CTkLabel(self.tabview.tab("Tab 2"), text="CTkLabel on Tab 2")
+        self.combobox_1.grid(row=0, column=1, padx=20, pady=(10, 10))
+
+        self.switch_dog_friendly = customtkinter.CTkSwitch(self.tab_view_filters.tab("Trail Preferences"), text=f"Dog Friendly")
+        self.switch_dog_friendly.grid(row=0, column=2, padx=20, pady=(10, 10))
+
+        self.label_tab_2 = customtkinter.CTkLabel(self.tab_view_filters.tab("Tab 2"), text="CTkLabel on Tab 2")
         self.label_tab_2.grid(row=0, column=0, padx=20, pady=20)
 
         # create scrollable frame
-        self.scrollable_frame = customtkinter.CTkScrollableFrame(self, width=1000, height=400, label_text="CTkScrollableFrame")
-        self.scrollable_frame.grid(row=1, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew")
+        self.scrollable_frame = customtkinter.CTkScrollableFrame(self, width=1000, height=400,
+                                                                 label_text="CTkScrollableFrame")
+        self.scrollable_frame.grid(row=1, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew")
         self.scrollable_frame.grid_columnconfigure(0, weight=1)
         self.scrollable_frame_switches = []
         for i in range(100):
             switch = customtkinter.CTkSwitch(master=self.scrollable_frame, text=f"CTkSwitch {i}")
             switch.grid(row=i, column=0, padx=10, pady=(0, 20))
             self.scrollable_frame_switches.append(switch)
-        #self.scrollable_frame.pack(expand=False)
+        # self.scrollable_frame.pack(expand=False)
 
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
@@ -59,6 +71,7 @@ class App(customtkinter.CTk):
 
     def sidebar_button_event(self):
         print("sidebar_button click")
+
 
 if __name__ == "__main__":
     app = App()
