@@ -22,7 +22,7 @@ class TrailRec(customtkinter.CTk):
         # when defining the row and col of the over arching grid
 
         # create tabview
-        self.tab_view_filters = customtkinter.CTkTabview(self, width=250)
+        self.tab_view_filters = customtkinter.CTkTabview(self, width=250, height=100)
         self.tab_view_filters.grid(row=0, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew")
         self.tab_view_filters.add("Trail Preferences")
         self.tab_view_filters.add("Tab 2")
