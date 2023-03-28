@@ -1,6 +1,7 @@
 import tkinter
 import tkinter.messagebox
 import customtkinter
+from PIL import Image
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -10,11 +11,9 @@ def states():
     return ["None", "MA", "NH", "MI", "VT", "CT", "RI"]
 
 
-class App(customtkinter.CTk):
+class TrailRec(customtkinter.CTk):
     def __init__(self):
         super().__init__()
-
-        example_image = tkinter.PhotoImage(file="images/smile_face.png")
 
         # configure window
         self.title("Trail Recommender")
@@ -43,19 +42,29 @@ class App(customtkinter.CTk):
         self.switch_dog_friendly = customtkinter.CTkSwitch(self.tab_view_filters.tab("Trail Preferences"), text=f"Dog Friendly")
         self.switch_dog_friendly.grid(row=0, column=2, padx=20, pady=(10, 10))
 
+        self.search_button = customtkinter.CTkButton(self.tab_view_filters.tab("Trail Preferences"), text="Search",
+                                                     command=self.open_input_dialog_event)
+        self.search_button.grid(row=2, column=5, padx=20, pady=(10, 10))
+
         self.label_tab_2 = customtkinter.CTkLabel(self.tab_view_filters.tab("Tab 2"), text="CTkLabel on Tab 2")
         self.label_tab_2.grid(row=0, column=0, padx=20, pady=20)
 
         # create scrollable frame
         self.scrollable_frame = customtkinter.CTkScrollableFrame(self, width=1000, height=400,
-                                                                 label_text="CTkScrollableFrame")
+                                                                 label_text="Trail results")
         self.scrollable_frame.grid(row=1, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew")
         self.scrollable_frame.grid_columnconfigure(0, weight=1)
         self.scrollable_frame_switches = []
+        example_image = customtkinter.CTkImage(Image.open("images/smile_face.png"))
         for i in range(100):
+            trail_result = customtkinter.CTkTextbox(master=self.scrollable_frame)
+            #trail_result.image_create(0.0, image=example_image)
+            trail_result.insert(50.0, "this is a test image")
+            trail_result.grid(row=i, column=0, padx=10, pady=(0, 20))
             switch = customtkinter.CTkSwitch(master=self.scrollable_frame, text=f"CTkSwitch {i}")
             switch.grid(row=i, column=0, padx=10, pady=(0, 20))
             self.scrollable_frame_switches.append(switch)
+            #self.scrollable_frame_switches.append(trail_result)
         # self.scrollable_frame.pack(expand=False)
 
     def open_input_dialog_event(self):
@@ -74,5 +83,5 @@ class App(customtkinter.CTk):
 
 
 if __name__ == "__main__":
-    app = App()
+    app = TrailRec()
     app.mainloop()
