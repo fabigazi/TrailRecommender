@@ -14,7 +14,7 @@ Demo of trail recommender algorithm
 '''
 def demo():
     #setting user preferences
-    user_preferences = {"trail-running":(1,.05),"length":(5000,.05),"loop":(1,.9)}
+    user_preferences = {"trail-running":(1,.05),"length":(5000,.90),"loop":(1,.05)}
     user_location = {'lat':45.316094085851695,'lng':-69.3804148103108}
     distance_threshold = 90
 
@@ -23,7 +23,7 @@ def demo():
     trail_data_path = os.path.abspath(os.path.join(current_directory, os.pardir))+"/data/trails.csv"
 
     #if you have issues with the file path (like me) you can just hardcode it
-    #trail_data_path = '/Users/btwitchell/OneDrive - Northeastern University/Classes/5800/final project/TrailRecommender/data/trails.csv'
+    # trail_data_path = '/Users/btwitchell/OneDrive - Northeastern University/Classes/5800/final project/TrailRecommender/data/trails.csv'
 
     #flow of function calls to return dataframe ranked by user preference
     df = preprocess_data(trail_data_path)
