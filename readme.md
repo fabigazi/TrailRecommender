@@ -1,3 +1,8 @@
+# Trail Recommender
+
+This is our final project for CS5800 - Algorithms at Northeastern University. To view a video of our presentation, click here. View our submitted materials in the `submitted materials` folder.
+
+
 ## Data we used
 ### **Numerical features:**
 * _geoloc
