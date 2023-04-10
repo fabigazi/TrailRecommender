@@ -27,7 +27,6 @@ def demo():
     current_directory = os.getcwd()
     trail_data_path = os.path.abspath(os.path.join(current_directory, os.pardir)) + "/data/trails.csv"
 
-    #if you have issues with the file path (like me) you can just hardcode it
     # if you have issues with the file path (like me) you can just hardcode it
     # trail_data_path = '/Users/btwitchell/OneDrive - Northeastern University/Classes/5800/final project/TrailRecommender/data/trails.csv'
 
