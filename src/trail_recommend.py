@@ -99,7 +99,6 @@ class TrailRec(customtkinter.CTk):
                                                       command=self.run_search)
         self.search_button1.grid(row=3, column=7, padx=20, pady=(10, 10))
 
-
         self.search_button2 = customtkinter.CTkButton(self.tab_view_filters.tab("Activities"), text="Search",
                                                       command=self.run_search)
         self.search_button2.grid(row=3, column=6, padx=20, pady=(10, 10))
@@ -176,7 +175,7 @@ class TrailRec(customtkinter.CTk):
         if not (self.difficulty.get() == "Any Difficulty"):
             user_preferences["difficulty_rating"] = (int(self.difficulty.get()), fraction)
 
-        if not (self.difficulty.get() == "No Dog Preferences"):
+        if not (self.dog_preference.get() == "No Dog Preferences"):
             user_preferences[self.dog_preference.get()] = (1, fraction)
 
     def run_search(self):
