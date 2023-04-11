@@ -1,9 +1,9 @@
 import math
 
-from preprocess_data import *
-from filter_dataframe import *
-from calculate_similarity import *
-from sort_df import *
+from src.data_processing.preprocess_data import *
+from src.data_processing.filter_dataframe import *
+from src.data_processing.calculate_similarity import *
+from src.data_processing.sort_df import *
 import customtkinter
 import tkinter as tk
 from tkinter import ttk
