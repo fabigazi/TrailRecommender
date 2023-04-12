@@ -5,13 +5,14 @@ trails:
 	deactivate
 
 requirements:
+	# go into setup directory and create git ignore folder
 	cd setup
-	mkdir .gitignore
+	mkdir -p .gitignore	
 	cd .gitignore
 	python3 -m venv venv
-	venv/bin/activate
+	. venv/bin/activate
 	pip3 install --upgrade pip
-	pip3 install -r ../requirements.txt
+	pip3 install -r setup/requirements.txt
 	deactivate
 
 teardown:
