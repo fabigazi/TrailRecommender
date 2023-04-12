@@ -3,7 +3,7 @@ pip install gower
 '''
 import pandas as pd
 import numpy as np
-from dependencies.gower_dist import gower_matrix
+from .gower_dist import gower_matrix
 
 '''
 Appends a column of similarty scores onto a pandas dataframe using the Gower distance function, with inputs based on dictionary parameters passed in for user's trail preference
