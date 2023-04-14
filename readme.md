@@ -13,6 +13,7 @@ These commands work on Mac OS only -- see [this link](https://packaging.python.o
 6) `Make teardown` to delete the virtual environment from your machine
 
 ## Data we used
+Our demo works on the [Kaggle National Parks AllTrails dataset](https://www.kaggle.com/datasets/planejane/national-park-trails)
 ### **Numerical features:**
 * _geoloc
 * popularity
@@ -40,3 +41,36 @@ A user may, for example, seek a trail that's around 2 miles long, is good for tr
 
 ### 3) Sorts the trails by degree of similarity to the user's preference
 Once the trail list has been filtered, we use merge sort to sort the list of trails, with the those most relevant to the user appearing first and those least relevant to the user appearing last.
+
+## UI overview:
+
+#### Zip Input Window:
+* The user is prompted with a window to input their zip code. if the user inputs incorrect input or nothing it will
+* re-prompt the user. 02215 has been extensively used. The zip window can be reached from the Trail prences tab
+
+#### Main Window:
+##### Trail Preferences tab
+* popularity - the popularity of a trail on a ranking of 0 - 85
+* length in ft - the length of the trail
+* elevation in ft - the preferred elevation of a trail.
+* Any Difficulty - the difficulty 1-5 that is perfered if Any Difficulty is left then difficulty is disregarded
+
+* Search Radius - the maximum distance the user wishes to search away from given location
+
+##### No Dog Preferences - left on no does not take any inclusive or exclusive dog inputs
+	* dogs - dogs allowed on trail
+	* dogs-leash - dogs on leash allowed on trail
+	* dogs-no - no dogs allowed on trail
+
+* Zip Code - returns the Zip Input Window if the user wants to change their zip
+            Search - runs the search on the given inputs from all tabs
+
+##### Features tab
+* 15 distinct trail features that a user can add as a preference in the search.
+            Search - runs the search on the given inputs
+
+##### Activities tab
+* 25 distinct activities associated with the trail that a user can add as a preference in the search.
+
+##### Search
+Runs the search on the given inputs
