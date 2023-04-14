@@ -2,6 +2,15 @@
 
 This is our final project for CS5800 - Algorithms at Northeastern University. To view a video of our presentation, [click here](https://youtu.be/xkn75DCSV3o). View our submitted materials in the `submitted materials` folder.
 
+
+### The following is the layout for the Trail Recommender Project:
+* `data` - contains CSVs (trail and zip codes)
+* `setup` - dependency requirements list
+* `src` - main project folder 
+* `src/data_processing` - py files that clean data and execute merge sort
+* `submitted materials` - the submission files for the project
+* `trail_recommend.py` - Python file that runs the GUI
+
 ## Running the program:
 These commands work on Mac OS only -- see [this link](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) for guidance on Windows setup.
 
@@ -13,7 +22,7 @@ These commands work on Mac OS only -- see [this link](https://packaging.python.o
 6) `Make teardown` to delete the virtual environment from your machine
 
 ## Data we used
-Our demo works on the [Kaggle National Parks AllTrails dataset](https://www.kaggle.com/datasets/planejane/national-park-trails)
+Our demo works on the [Kaggle National Parks AllTrails dataset](https://www.kaggle.com/datasets/planejane/national-park-trails).
 ### **Numerical features:**
 * _geoloc
 * popularity
