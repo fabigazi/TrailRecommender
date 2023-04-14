@@ -1,6 +1,6 @@
 # Trail Recommender
 
-This is our final project for CS5800 - Algorithms at Northeastern University. To view a video of our presentation, [click here](https://youtu.be/xkn75DCSV3o). View our submitted materials in the `submitted materials` folder.
+This is our final project for CS5800 - Algorithms at Northeastern University. To view a video of our presentation, [click here](https://youtu.be/qj9sqizcPlI). View our submitted materials in the `submitted materials` folder.
 
 
 ### The following is the layout for the Trail Recommender Project:
