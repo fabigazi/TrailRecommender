@@ -15,17 +15,29 @@ This is our final project for CS5800 - Algorithms at Northeastern University. To
 These commands work on Mac OS only -- see [this link](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) for guidance on Windows setup.
 
 1) Create a virtual environment
-```make venv```
+```
+make venv
+```
 2) Initialize the Python virtual environment
-```source .gitignore/venv/bin/activate```
+```
+source .gitignore/venv/bin/activate
+```
 3) Install the necessary packages
-```make requirements```
+```
+make requirements
+```
 4) Run the program
-```Make trails```
+```
+Make trails
+```
 5) Deactivate the Python virtual environment
-```deactivate```
+```
+deactivate
+```
 6) Delete the virtual environment from your machine
-```Make teardown```
+```
+Make teardown
+```
 
 ## Data we used
 Our demo works on the [Kaggle National Parks AllTrails dataset](https://www.kaggle.com/datasets/planejane/national-park-trails).
