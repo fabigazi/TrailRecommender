@@ -2,6 +2,15 @@
 
 This is our final project for CS5800 - Algorithms at Northeastern University. To view a video of our presentation, [click here](https://youtu.be/xkn75DCSV3o). View our submitted materials in the `submitted materials` folder.
 
+## Running the program:
+These commands work on Mac OS only -- see [this link](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) for guidance on Windows setup.
+
+1) `make venv` to create a virtual environment
+2) `source .gitignore/venv/bin/activate` to initialize the Python virtual environment
+3) `make requirements` to install the necessary packages
+4) `Make trails` to run the program
+5) `deactivate` to deactivate the Python virtual environment
+6) `Make teardown` to delete the virtual environment from your machine
 
 ## Data we used
 ### **Numerical features:**

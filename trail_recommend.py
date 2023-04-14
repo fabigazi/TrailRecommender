@@ -195,8 +195,9 @@ class TrailRec(customtkinter.CTk):
         user_location = {'lat': latitude, 'lng': longitude}
 
         # get trails data path
-        current_directory = os.getcwd()
-        trail_data_path = os.path.abspath(os.path.join(current_directory, os.pardir)) + "/data/trails.csv"
+        #current_directory = os.getcwd()
+        #trail_data_path = os.path.abspath(os.path.join(current_directory, os.pardir)) + "/data/trails.csv"
+        trail_data_path = os.getcwd()+"/data/trails.csv"
 
         # flow of function calls to return dataframe ranked by user preference
         df1 = preprocess_data(trail_data_path)
@@ -218,8 +219,9 @@ class TrailRec(customtkinter.CTk):
     def input_latitude_and_longitude(self):
         dialog = customtkinter.CTkInputDialog(text="Please enter your zip code",
                                               title="Zip")
-        current_directory = os.getcwd()
-        zip_data_path = os.path.abspath(os.path.join(current_directory, os.pardir)) + "/data/uszips.csv"
+        #current_directory = os.getcwd()
+        #zip_data_path = os.path.abspath(os.path.join(current_directory, os.pardir)) + "/data/uszips.csv"
+        zip_data_path = os.getcwd() + "/data/uszips.csv"
 
         zip_df = pd.read_csv(zip_data_path)
 
