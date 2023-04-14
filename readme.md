@@ -57,10 +57,10 @@ Once the trail list has been filtered, we use merge sort to sort the list of tra
 
 * Search Radius - the maximum distance the user wishes to search away from given location
 
-##### No Dog Preferences - left on no does not take any inclusive or exclusive dog inputs
-	* dogs - dogs allowed on trail
-	* dogs-leash - dogs on leash allowed on trail
-	* dogs-no - no dogs allowed on trail
+* No Dog Preferences - left on no does not take any inclusive or exclusive dog inputs
+  * dogs - dogs allowed on trail
+  * dogs-leash - dogs on leash allowed on trail
+  * dogs-no - no dogs allowed on trail
 
 * Zip Code - returns the Zip Input Window if the user wants to change their zip
             Search - runs the search on the given inputs from all tabs
@@ -73,4 +73,4 @@ Once the trail list has been filtered, we use merge sort to sort the list of tra
 * 25 distinct activities associated with the trail that a user can add as a preference in the search.
 
 ##### Search
-Runs the search on the given inputs
+* Runs the search on the given inputs
